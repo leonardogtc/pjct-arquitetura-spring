@@ -26,7 +26,29 @@ public class MontadoraConfiguration {
         motor.setModelo("XPTO-01");
         motor.setCilindrada(5);
         motor.setCavalos(100);
+        motor.setTipoMotor(TipoMotor.FLEX);
+        motor.setLitragem(1.0);
+        return motor;
+    }
+
+    @Bean
+    public Motor motorEletico() {
+        var motor = new Motor();
+        motor.setModelo("XPTO-02");
+        motor.setCilindrada(5);
+        motor.setCavalos(100);
         motor.setTipoMotor(TipoMotor.ELETRICO);
+        motor.setLitragem(1.0);
+        return motor;
+    }
+
+    @Bean
+    public Motor motorDiesel() {
+        var motor = new Motor();
+        motor.setModelo("XPTO-03");
+        motor.setCilindrada(5);
+        motor.setCavalos(100);
+        motor.setTipoMotor(TipoMotor.DIESEL);
         motor.setLitragem(1.0);
         return motor;
     }
