@@ -4,6 +4,8 @@ import br.com.leonardogtc.arquiteturaspring.montadora.Motor;
 import br.com.leonardogtc.arquiteturaspring.montadora.TipoMotor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
+
 /**
  * Configuração da Montadora.
  * Esta classe é responsável por definir as configurações específicas da montadora.
@@ -18,9 +20,11 @@ public class MontadoraConfiguration {
      * gerenciar a instância retornada como um bean dentro do contexto da aplicação.
      * O bean Motor pode ser injetado em outras classes que necessitam de um motor
      * para funcionar corretamente, como os carros da montadora.
+     *
      * @return Uma instância do tipo Motor.
      */
-    @Bean
+    @Bean(name = "motorFlex")
+    @Primary
     public Motor motor() {
         var motor = new Motor();
         motor.setModelo("XPTO-01");
@@ -31,7 +35,7 @@ public class MontadoraConfiguration {
         return motor;
     }
 
-    @Bean
+    @Bean(name = "motorEletico")
     public Motor motorEletico() {
         var motor = new Motor();
         motor.setModelo("XPTO-02");

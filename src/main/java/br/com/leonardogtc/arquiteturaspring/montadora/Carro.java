@@ -48,6 +48,6 @@ public class Carro {
         if(chave.getMontadora() != this.montadora) {
             return new CarroStatus("Chave inválida para este carro.");
         }
-        return new CarroStatus("Carro " + this.modelo + " da montadora " + this.montadora + " está ligado.");
+        return new CarroStatus("Carro " + this.modelo + " da montadora " + this.montadora + " " + this.motor + " está ligado.");
     }
 }

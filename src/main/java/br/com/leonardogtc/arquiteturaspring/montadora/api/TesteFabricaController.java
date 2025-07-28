@@ -31,7 +31,7 @@ public class TesteFabricaController {
      * injetada quando há múltiplas implementações disponíveis.
      * Neste caso, estamos injetando o motor elétrico.
      */
-    @Qualifier("motorEletico")
+    @Flex
     private Motor motor;
 
     @PostMapping
